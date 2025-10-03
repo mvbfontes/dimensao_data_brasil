@@ -1,0 +1,392 @@
+createOrReplace
+
+	expression Feriados = ```
+			// ============================================
+			// TABELA 1: FERIADOS
+			// ============================================
+			// Esta tabela deve ser criada como uma consulta separada chamada "Feriados"
+			let
+			    Fonte = #table(
+			        {"DateKey", "Nome do Feriado"},
+			        {
+			            // 2010
+			            {20100101, "Ano Novo"}, {20100216, "Carnaval"}, {20100402, "Paixão de Cristo"}, {20100421, "Tiradentes"}, {20100501, "Dia do Trabalho"}, {20100907, "Independência do Brasil"}, {20101012, "Nossa Senhora Aparecida"}, {20101102, "Finados"}, {20101115, "Proclamação da República"}, {20101225, "Natal"},
+			            // 2011
+			            {20110101, "Ano Novo"}, {20110308, "Carnaval"}, {20110422, "Paixão de Cristo"}, {20110421, "Tiradentes"}, {20110501, "Dia do Trabalho"}, {20110907, "Independência do Brasil"}, {20111012, "Nossa Senhora Aparecida"}, {20111102, "Finados"}, {20111115, "Proclamação da República"}, {20111225, "Natal"},
+			            // 2012
+			            {20120101, "Ano Novo"}, {20120221, "Carnaval"}, {20120406, "Paixão de Cristo"}, {20120421, "Tiradentes"}, {20120501, "Dia do Trabalho"}, {20120907, "Independência do Brasil"}, {20121012, "Nossa Senhora Aparecida"}, {20121102, "Finados"}, {20121115, "Proclamação da República"}, {20121225, "Natal"},
+			            // 2013
+			            {20130101, "Ano Novo"}, {20130212, "Carnaval"}, {20130329, "Paixão de Cristo"}, {20130421, "Tiradentes"}, {20130501, "Dia do Trabalho"}, {20130907, "Independência do Brasil"}, {20131012, "Nossa Senhora Aparecida"}, {20131102, "Finados"}, {20131115, "Proclamação da República"}, {20131225, "Natal"},
+			            // 2014
+			            {20140101, "Ano Novo"}, {20140304, "Carnaval"}, {20140418, "Paixão de Cristo"}, {20140421, "Tiradentes"}, {20140501, "Dia do Trabalho"}, {20140907, "Independência do Brasil"}, {20141012, "Nossa Senhora Aparecida"}, {20141102, "Finados"}, {20141115, "Proclamação da República"}, {20141225, "Natal"},
+			            // 2015
+			            {20150101, "Ano Novo"}, {20150217, "Carnaval"}, {20150403, "Paixão de Cristo"}, {20150421, "Tiradentes"}, {20150501, "Dia do Trabalho"}, {20150907, "Independência do Brasil"}, {20151012, "Nossa Senhora Aparecida"}, {20151102, "Finados"}, {20151115, "Proclamação da República"}, {20151225, "Natal"},
+			            // 2016
+			            {20160101, "Ano Novo"}, {20160209, "Carnaval"}, {20160325, "Paixão de Cristo"}, {20160421, "Tiradentes"}, {20160501, "Dia do Trabalho"}, {20160907, "Independência do Brasil"}, {20161012, "Nossa Senhora Aparecida"}, {20161102, "Finados"}, {20161115, "Proclamação da República"}, {20161225, "Natal"},
+			            // 2017
+			            {20170101, "Ano Novo"}, {20170228, "Carnaval"}, {20170414, "Paixão de Cristo"}, {20170421, "Tiradentes"}, {20170501, "Dia do Trabalho"}, {20170907, "Independência do Brasil"}, {20171012, "Nossa Senhora Aparecida"}, {20171102, "Finados"}, {20171115, "Proclamação da República"}, {20171225, "Natal"},
+			            // 2018
+			            {20180101, "Ano Novo"}, {20180213, "Carnaval"}, {20180330, "Paixão de Cristo"}, {20180421, "Tiradentes"}, {20180501, "Dia do Trabalho"}, {20180907, "Independência do Brasil"}, {20181012, "Nossa Senhora Aparecida"}, {20181102, "Finados"}, {20181115, "Proclamação da República"}, {20181225, "Natal"},
+			            // 2019
+			            {20190101, "Ano Novo"}, {20190305, "Carnaval"}, {20190419, "Paixão de Cristo"}, {20190421, "Tiradentes"}, {20190501, "Dia do Trabalho"}, {20190907, "Independência do Brasil"}, {20191012, "Nossa Senhora Aparecida"}, {20191102, "Finados"}, {20191115, "Proclamação da República"}, {20191225, "Natal"},
+			            // 2020
+			            {20200101, "Ano Novo"}, {20200225, "Carnaval"}, {20200410, "Paixão de Cristo"}, {20200421, "Tiradentes"}, {20200501, "Dia do Trabalho"}, {20200907, "Independência do Brasil"}, {20201012, "Nossa Senhora Aparecida"}, {20201102, "Finados"}, {20201115, "Proclamação da República"}, {20201225, "Natal"},
+			            // 2021
+			            {20210101, "Ano Novo"}, {20210216, "Carnaval"}, {20210402, "Paixão de Cristo"}, {20210421, "Tiradentes"}, {20210501, "Dia do Trabalho"}, {20210907, "Independência do Brasil"}, {20211012, "Nossa Senhora Aparecida"}, {20211102, "Finados"}, {20211115, "Proclamação da República"}, {20211225, "Natal"},
+			            // 2022
+			            {20220101, "Ano Novo"}, {20220301, "Carnaval"}, {20220415, "Paixão de Cristo"}, {20220421, "Tiradentes"}, {20220501, "Dia do Trabalho"}, {20220907, "Independência do Brasil"}, {20221012, "Nossa Senhora Aparecida"}, {20221102, "Finados"}, {20221115, "Proclamação da República"}, {20221225, "Natal"},
+			            // 2023
+			            {20230101, "Ano Novo"}, {20230221, "Carnaval"}, {20230407, "Paixão de Cristo"}, {20230421, "Tiradentes"}, {20230501, "Dia do Trabalho"}, {20230907, "Independência do Brasil"}, {20231012, "Nossa Senhora Aparecida"}, {20231102, "Finados"}, {20231115, "Proclamação da República"}, {20231225, "Natal"},
+			            // 2024
+			            {20240101, "Ano Novo"}, {20240213, "Carnaval"}, {20240329, "Paixão de Cristo"}, {20240421, "Tiradentes"}, {20240501, "Dia do Trabalho"}, {20240907, "Independência do Brasil"}, {20241012, "Nossa Senhora Aparecida"}, {20241102, "Finados"}, {20241115, "Proclamação da República"}, {20241225, "Natal"},
+			            // 2025
+			            {20250101, "Ano Novo"}, {20250304, "Carnaval"}, {20250418, "Paixão de Cristo"}, {20250421, "Tiradentes"}, {20250501, "Dia do Trabalho"}, {20250907, "Independência do Brasil"}, {20251012, "Nossa Senhora Aparecida"}, {20251102, "Finados"}, {20251115, "Proclamação da República"}, {20251225, "Natal"},
+			            // 2026
+			            {20260101, "Ano Novo"}, {20260217, "Carnaval"}, {20260403, "Paixão de Cristo"}, {20260421, "Tiradentes"}, {20260501, "Dia do Trabalho"}, {20260907, "Independência do Brasil"}, {20261012, "Nossa Senhora Aparecida"}, {20261102, "Finados"}, {20261115, "Proclamação da República"}, {20261225, "Natal"},
+			            // 2027
+			            {20270101, "Ano Novo"}, {20270209, "Carnaval"}, {20270326, "Paixão de Cristo"}, {20270421, "Tiradentes"}, {20270501, "Dia do Trabalho"}, {20270907, "Independência do Brasil"}, {20271012, "Nossa Senhora Aparecida"}, {20271102, "Finados"}, {20271115, "Proclamação da República"}, {20271225, "Natal"},
+			            // 2028
+			            {20280101, "Ano Novo"}, {20280301, "Carnaval"}, {20280414, "Paixão de Cristo"}, {20280421, "Tiradentes"}, {20280501, "Dia do Trabalho"}, {20280907, "Independência do Brasil"}, {20281012, "Nossa Senhora Aparecida"}, {20281102, "Finados"}, {20281115, "Proclamação da República"}, {20281225, "Natal"},
+			            // 2029
+			            {20290101, "Ano Novo"}, {20290213, "Carnaval"}, {20290330, "Paixão de Cristo"}, {20290421, "Tiradentes"}, {20290501, "Dia do Trabalho"}, {20290907, "Independência do Brasil"}, {20291012, "Nossa Senhora Aparecida"}, {20291102, "Finados"}, {20291115, "Proclamação da República"}, {20291225, "Natal"},
+			            // 2030
+			            {20300101, "Ano Novo"}, {20300305, "Carnaval"}, {20300419, "Paixão de Cristo"}, {20300421, "Tiradentes"}, {20300501, "Dia do Trabalho"}, {20300907, "Independência do Brasil"}, {20301012, "Nossa Senhora Aparecida"}, {20301102, "Finados"}, {20301115, "Proclamação da República"}, {20301225, "Natal"}
+			        }
+			    ),
+			    
+			    // Define os tipos de dados
+			    AlterarTipo = Table.TransformColumnTypes(Fonte, {{"DateKey", Int64.Type}, {"Nome do Feriado", type text}})
+			in
+			    AlterarTipo
+			
+			// ============================================
+			// VOCÊ PODE EDITAR ESTA TABELA DIRETAMENTE NO POWER QUERY
+			// ADICIONANDO OU REMOVENDO LINHAS CONFORME NECESSÁRIO!
+			// 
+			// Para adicionar um novo feriado:
+			// 1. Clique na tabela "Feriados" no Power Query
+			// 2. Adicione uma nova linha manualmente
+			// 3. Insira o DateKey no formato YYYYMMDD (ex: 20250620)
+			// 4. Insira o nome do feriado (ex: "Corpus Christi")
+			// ============================================
+			```
+		
+
+		annotation PBI_NavigationStepName = Navegação
+
+		annotation PBI_ResultType = Table
+
+
+
+	table DimData
+		
+		dataCategory: Time
+
+		column DateKey
+			dataType: int64
+			isHidden
+			formatString: 0
+			summarizeBy: none
+			sourceColumn: DateKey
+
+			changedProperty = IsHidden
+
+			annotation SummarizationSetBy = User
+
+		column Data
+			dataType: dateTime
+			isKey
+			formatString: Short Date
+			summarizeBy: none
+			sourceColumn: Data
+
+			annotation SummarizationSetBy = Automatic
+
+			annotation UnderlyingDateTimeDataType = Date
+
+		column Ano
+			dataType: int64
+			formatString: 0
+			summarizeBy: none
+			sourceColumn: Ano
+
+			annotation SummarizationSetBy = User
+
+		column Semestre
+			dataType: string
+			summarizeBy: none
+			sourceColumn: Semestre
+
+			annotation SummarizationSetBy = Automatic
+
+		column Trimestre
+			dataType: string
+			summarizeBy: none
+			sourceColumn: Trimestre
+
+			annotation SummarizationSetBy = Automatic
+
+		column Mês
+			dataType: string
+			summarizeBy: none
+			sourceColumn: Mês
+			sortByColumn: 'Número do mês'
+
+			changedProperty = SortByColumn
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Dia da Semana'
+			dataType: string
+			summarizeBy: none
+			sourceColumn: Dia da Semana
+			sortByColumn: 'Número do dia na semana'
+
+			changedProperty = SortByColumn
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Número do dia no ano'
+			dataType: int64
+			formatString: 0
+			summarizeBy: none
+			sourceColumn: Número do dia no ano
+
+			annotation SummarizationSetBy = User
+
+		column 'Número do dia no mês'
+			dataType: int64
+			formatString: 0
+			summarizeBy: none
+			sourceColumn: Número do dia no mês
+
+			annotation SummarizationSetBy = User
+
+		column 'Indicador de fim de semana'
+			dataType: int64
+			formatString: 0
+			summarizeBy: none
+			sourceColumn: Indicador de fim de semana
+
+			annotation SummarizationSetBy = User
+
+		column 'Indicador de dia útil'
+			dataType: int64
+			formatString: 0
+			summarizeBy: none
+			sourceColumn: Indicador de dia útil
+
+			annotation SummarizationSetBy = User
+
+		column 'Indicador de feriado'
+			dataType: int64
+			formatString: 0
+			summarizeBy: none
+			sourceColumn: Indicador de feriado
+
+			annotation SummarizationSetBy = User
+
+		column 'Nome do Feriado'
+			dataType: string
+			summarizeBy: none
+			sourceColumn: Nome do Feriado
+
+			annotation SummarizationSetBy = Automatic
+
+		column Ano-mês
+			dataType: string
+			summarizeBy: none
+			sourceColumn: Ano-mês
+
+			annotation SummarizationSetBy = Automatic
+
+		column Ano-trimestre
+			dataType: string
+			summarizeBy: none
+			sourceColumn: Ano-trimestre
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Número do mês'
+			dataType: int64
+			formatString: 0
+			summarizeBy: none
+			sourceColumn: Número do mês
+
+			annotation SummarizationSetBy = User
+
+		column 'Número do trimestre'
+			dataType: int64
+			formatString: 0
+			summarizeBy: none
+			sourceColumn: Número do trimestre
+
+			annotation SummarizationSetBy = User
+
+		column 'Mês Abreviado'
+			dataType: string
+			summarizeBy: none
+			sourceColumn: Mês Abreviado
+			sortByColumn: 'Número do mês'
+
+			changedProperty = SortByColumn
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Dia da Semana Abreviado'
+			dataType: string
+			summarizeBy: none
+			sourceColumn: Dia da Semana Abreviado
+			sortByColumn: 'Número do dia na semana'
+
+			changedProperty = SortByColumn
+
+			annotation SummarizationSetBy = Automatic
+
+		column 'Número do dia na semana'
+			dataType: int64
+			formatString: 0
+			summarizeBy: none
+			sourceColumn: Número do dia na semana
+
+			annotation SummarizationSetBy = User
+
+		partition DimData = m
+			mode: import
+			source = ```
+					// ============================================
+					// TABELA 2: DIMENSÃO DE DATA
+					// ============================================
+					// Esta deve ser criada como uma consulta separada chamada "DimData"
+					let
+					    // Função para criar a dimensão de datas
+					    FuncaoDimData = (DataInicio as date, DataFim as date) as table =>
+					    let
+					        // Gera lista de datas no intervalo
+					        NumeroDias = Duration.Days(DataFim - DataInicio) + 1,
+					        ListaDatas = List.Dates(DataInicio, NumeroDias, #duration(1,0,0,0)),
+					        TabelaDatas = Table.FromList(ListaDatas, Splitter.SplitByNothing(), {"Data"}),
+					        
+					        // Adiciona todas as colunas
+					        AdicionaColunas = Table.AddColumn(TabelaDatas, "DateKey", each 
+					            Number.FromText(
+					                Number.ToText(Date.Year([Data])) & 
+					                Text.PadStart(Number.ToText(Date.Month([Data])), 2, "0") & 
+					                Text.PadStart(Number.ToText(Date.Day([Data])), 2, "0")
+					            ), Int64.Type),
+					        
+					        AdicionaAno = Table.AddColumn(AdicionaColunas, "Ano", each Date.Year([Data]), Int64.Type),
+					        
+					        AdicionaSemestre = Table.AddColumn(AdicionaAno, "Semestre", each 
+					            if Date.Month([Data]) <= 6 then "1º semestre" else "2º semestre", type text),
+					        
+					        AdicionaTrimestre = Table.AddColumn(AdicionaSemestre, "Trimestre", each 
+					            let trim = Number.RoundUp(Date.Month([Data]) / 3)
+					            in if trim = 1 then "1º trimestre"
+					               else if trim = 2 then "2º trimestre"
+					               else if trim = 3 then "3º trimestre"
+					               else "4º trimestre", type text),
+					        
+					        AdicionaMes = Table.AddColumn(AdicionaTrimestre, "Mês", each 
+					            Date.ToText([Data], "MMMM", "pt-BR"), type text),
+					        
+					        AdicionaDiaSemana = Table.AddColumn(AdicionaMes, "Dia da Semana", each 
+					            Date.ToText([Data], "dddd", "pt-BR"), type text),
+					        
+					        AdicionaDiaSemanaAbrev = Table.AddColumn(AdicionaDiaSemana, "Dia da Semana Abreviado", each 
+					            let
+					                diaSemana = Date.DayOfWeek([Data], Day.Monday)
+					            in
+					                if diaSemana = 0 then "SEG"
+					                else if diaSemana = 1 then "TER"
+					                else if diaSemana = 2 then "QUA"
+					                else if diaSemana = 3 then "QUI"
+					                else if diaSemana = 4 then "SEX"
+					                else if diaSemana = 5 then "SAB"
+					                else "DOM", type text),
+					        
+					        AdicionaNumeroDiaSemana = Table.AddColumn(AdicionaDiaSemanaAbrev, "Número do dia na semana", each 
+					            let
+					                diaSemana = Date.DayOfWeek([Data], Day.Monday)
+					            in
+					                if diaSemana = 6 then 7 // Domingo = 7
+					                else diaSemana + 1, Int64.Type), // Segunda = 1, Terça = 2, etc.
+					        
+					        AdicionaMesAbrev = Table.AddColumn(AdicionaNumeroDiaSemana, "Mês Abreviado", each 
+					            let
+					                mes = Date.Month([Data])
+					            in
+					                if mes = 1 then "JAN"
+					                else if mes = 2 then "FEV"
+					                else if mes = 3 then "MAR"
+					                else if mes = 4 then "ABR"
+					                else if mes = 5 then "MAI"
+					                else if mes = 6 then "JUN"
+					                else if mes = 7 then "JUL"
+					                else if mes = 8 then "AGO"
+					                else if mes = 9 then "SET"
+					                else if mes = 10 then "OUT"
+					                else if mes = 11 then "NOV"
+					                else "DEZ", type text),
+					        
+					        AdicionaDiaAno = Table.AddColumn(AdicionaMesAbrev, "Número do dia no ano", each 
+					            Date.DayOfYear([Data]), Int64.Type),
+					        
+					        AdicionaDiaMes = Table.AddColumn(AdicionaDiaAno, "Número do dia no mês", each 
+					            Date.Day([Data]), Int64.Type),
+					        
+					        AdicionaFimSemana = Table.AddColumn(AdicionaDiaMes, "Indicador de fim de semana", each 
+					            if Date.DayOfWeek([Data], Day.Monday) >= 5 then 1 else 0, Int64.Type),
+					        
+					        AdicionaNumMes = Table.AddColumn(AdicionaFimSemana, "Número do mês", each 
+					            Date.Month([Data]), Int64.Type),
+					        
+					        AdicionaNumTrimestre = Table.AddColumn(AdicionaNumMes, "Número do trimestre", each 
+					            Number.RoundUp(Date.Month([Data]) / 3), Int64.Type),
+					        
+					        AdicionaAnoMes = Table.AddColumn(AdicionaNumTrimestre, "Ano-mês", each 
+					            Number.ToText(Date.Year([Data])) & "-" & 
+					            Text.PadStart(Number.ToText(Date.Month([Data])), 2, "0"), type text),
+					        
+					        AdicionaAnoTrimestre = Table.AddColumn(AdicionaAnoMes, "Ano-trimestre", each 
+					            Number.ToText(Date.Year([Data])) & "-Q" & 
+					            Number.ToText(Number.RoundUp(Date.Month([Data]) / 3)), type text),
+					        
+					        // Faz merge com tabela de Feriados
+					        MergeComFeriados = Table.NestedJoin(AdicionaAnoTrimestre, {"DateKey"}, Feriados, {"DateKey"}, "Feriados", JoinKind.LeftOuter),
+					        
+					        // Expande a coluna Nome do Feriado
+					        ExpandeFeriados = Table.ExpandTableColumn(MergeComFeriados, "Feriados", {"Nome do Feriado"}, {"Nome do Feriado"}),
+					        
+					        // Adiciona indicador de feriado (1 se tiver nome de feriado, 0 se não)
+					        AdicionaIndicadorFeriado = Table.AddColumn(ExpandeFeriados, "Indicador de feriado", each 
+					            if [Nome do Feriado] = null then 0 else 1, Int64.Type),
+					        
+					        // Adiciona indicador de dia útil (não é fim de semana E não é feriado)
+					        AdicionaDiaUtil = Table.AddColumn(AdicionaIndicadorFeriado, "Indicador de dia útil", each 
+					            if [Indicador de fim de semana] = 0 and [Indicador de feriado] = 0 then 1 else 0, Int64.Type),
+					        
+					        // Define o tipo de dados da coluna Data como date
+					        DefinirTipoData = Table.TransformColumnTypes(AdicionaDiaUtil, {{"Data", type date}}),
+					        
+					        // Reordena as colunas
+					        ReordenarColunas = Table.ReorderColumns(DefinirTipoData, {
+					            "DateKey", "Data", "Ano", "Semestre", "Trimestre", "Mês", "Mês Abreviado",
+					            "Dia da Semana", "Dia da Semana Abreviado", "Número do dia na semana", "Número do dia no ano", "Número do dia no mês", 
+					            "Indicador de fim de semana", "Indicador de dia útil", 
+					            "Indicador de feriado", "Nome do Feriado", "Ano-mês", "Ano-trimestre", 
+					            "Número do mês", "Número do trimestre"
+					        })
+					    in
+					        ReordenarColunas,
+					    
+					    // CHAMADA DA FUNÇÃO - ALTERE AS DATAS CONFORME NECESSÁRIO
+					    Resultado = FuncaoDimData(#date(2010, 1, 1), #date(2030, 12, 31))
+					in
+					    Resultado
+					```
+
+		annotation PBI_NavigationStepName = Navegação
+
+		annotation PBI_ResultType = Table
+
