@@ -9,18 +9,19 @@ Código para geração de dimensão de data no Power BI utilizando a aba "TMDL v
 Como utilizar:
 
 
-1. Abrir o Power BI Desktop;
-2. Criar um novo relatório em branco ou abrir um projeto existente;
-3. Navegar até a aba "TMDL view";
-4. Colar o código do arquivo "Script DimData Brasil.tmdl" (disponível neste repositório do Github);
-5. (Opcional) Editar no final do script as datas que deseja que sejam geradas (o padrão está de 2010 a 2030);
+1. Abra o Power BI Desktop: crie um novo relatório em branco ou abra um relatório existente;
+2. No menu à esquerda, clique em TMDL View — é a exibição de código do modelo;
+3. Abra o arquivo "Script DimData Brasil.tmdl" (disponível neste repositório do Github) e clique no ícone de copiar no canto superior direito;
+4. Volte ao Power BI e cole o código na TMDL View;
+5. (Opcional) Por padrão, o código cria datas de 2010 a 2030. Se quiser outro intervalo, altere os valores dos parâmetros no final do script:<br><br>
 
 <img width="1726" height="139" alt="image" src="https://github.com/user-attachments/assets/308e6797-dc23-4d75-aae4-ca5193140bb3" />
 
+<br><br>
+6. Clique em "Aplicar" no canto superior esquerdo. Isso vai criar a tabela "DimData" automaticamente;<br>
+7. Depois, clique em "Atualizar agora" para carregar os dados;<br>
+8. Confira o resultado nas abas "model view" ou "report view". Você vai ver a tabela "DimData" completa e pronta para uso;<br>
+9. (Opcional) Se quiser alterar os feriados, vá em Transformar dados (ele abrirá a janela do Power Query). <br>
+Na consulta Feriados, clique em Editor avançado e edite as linhas — adicionando, removendo ou ajustando as datas e descrições.
 
-6. Clicar em "aplicar as alterações"
-7. Após concluído, clicar em "Atualizar agora" para atualização dos dados da dimensão;
-8. Confirmar se a tabela "DimData" foi criada e os dados foram carregados corretamente.
-
-Para editar os feriados (incluir, alterar ou remover) utilizar o próprio TMDL view ou abrir a janela do Power Query, localizar a consulta "Feriados" e clicar no botão "Editor avançado".
 
