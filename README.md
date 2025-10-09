@@ -22,6 +22,9 @@ Como utilizar:
 7. Depois, clique em "Atualizar agora" para carregar os dados;<br>
 8. Confira o resultado nas abas "model view" ou "report view". Você vai ver a tabela "DimData" completa e pronta para uso;<br>
 9. (Opcional) Se quiser alterar os feriados, vá em Transformar dados (ele abrirá a janela do Power Query). <br>
-Na consulta Feriados, clique em Editor avançado e edite as linhas — adicionando, removendo ou ajustando as datas e descrições.
+Na consulta Feriados, clique em Editor avançado e edite as linhas — adicionando, removendo ou ajustando as datas e descrições.<br>
+
+
+Se preferir, confira o vídeo com a explicação: https://youtu.be/GmBfg1hBzbI?si=jVTJXuDuAeI9rSWN
 
 
